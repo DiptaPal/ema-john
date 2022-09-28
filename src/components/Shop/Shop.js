@@ -61,7 +61,7 @@ const Shop = () => {
                     </div>
                 </div>
                 <div className='col-span-5 rounded-md mx-24 py-8 mb-5 md:rounded-none md:mx-0 md:py-0 md:mb-0 md:col-span-2 lg:col-span-1 bg-orange-300 text-white relative'>
-                <div className='sticky top-10'>
+                <div className='sticky top-0'>
                     <Order 
                         cart = {cart}
                         key = {cart.id}
