@@ -8,8 +8,10 @@ const Order = ({cart}) => {
     let shipping = 0;
     let tax;
     let grandTotal;
+    let quantity = 0;
     for(const product of cart){
-        total = total + product.price;
+        quantity = quantity + product.quantity;
+        total = total + product.price * product.quantity;
         shipping = shipping + product.shipping;
         tax = (total * 0.1).toFixed(2);
         grandTotal = (total + shipping + parseFloat(tax)).toFixed(2);
@@ -20,7 +22,7 @@ const Order = ({cart}) => {
     return (
         <div className='text-black flex flex-col gap-6 mt-4'>
             <p className='text-2xl'>Order Summary</p>
-            <p>Selected Items: {cart.length}</p>
+            <p>Selected Items: {quantity}</p>
             <p>Total Price: ${total}</p>
             <p>Total Shipping Charge: ${shipping}</p>
             <p>Tax: ${tax}</p>
