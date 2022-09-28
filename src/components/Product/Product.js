@@ -21,7 +21,7 @@ const Product = ({product, handleAddToCart}) => {
                     </div>
                 </div>
                 <div className="card-actions">
-                    <button onClick={() => handleAddToCart(product)} className="bg-orange-400 w-full text-black hover:bg-black hover:text-white rounded-b-lg"><p className='pr-2'>Add to Cart</p><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></button>
+                    <button onClick={() => handleAddToCart(product)} className="bg-orange-400 w-full text-black hover:bg-black hover:text-white rounded-b-lg flex flex-row py-3 justify-center items-center"><p className='pr-2'>Add to Cart</p><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></button>
                 </div>
             </div>
             </div>

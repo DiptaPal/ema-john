@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import Order from '../Order/Order';
+import { addToCart } from '../../utilities/fakeDataBase';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ const Shop = () => {
     const handleAddToCart = (product) =>{
         const newCart = [...cart,product];
         setCart(newCart);
+        addToCart(product.id);
     }
 
     return (
@@ -32,7 +34,7 @@ const Shop = () => {
                     }
                 </div>
                 </div>
-                <div className='col-span-5 mx-24 py-8 mb-5 md:mx-0 md:py-0 md:mb-0 md:col-span-2 lg:col-span-1 bg-orange-300 text-white relative'>
+                <div className='col-span-5 rounded-md mx-24 py-8 mb-5 md:rounded-none md:mx-0 md:py-0 md:mb-0 md:col-span-2 lg:col-span-1 bg-orange-300 text-white relative'>
                 <div className='sticky top-10'>
                     <Order 
                         cart = {cart}
